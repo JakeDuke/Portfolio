@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
   <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="http://anijs.github.io/lib/anicollection/anicollection.css">
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -39,11 +39,11 @@
             class="white--text"
           >
  
-
+            <div class="aos-item" data-aos="fade-down" data-aos-duration="800">
             <h1 class="white--text mb-2 display-3 text-xs-center"
-            data-anijs="if: scroll, on: window, do: fadeInDown animated, before: $scrollReveal"
-            >Welcome To My Portfolio!</h1>
             
+            >Welcome To My Portfolio!</h1>
+            </div>
             <v-btn
               class="black--text lighten-2 mt-5"
               dark
@@ -58,7 +58,8 @@
         </v-parallax>
       </section>
 
-      <section id="projects" data-anijs="if: scroll, on: window, do: zoomIn  animated, before: $scrollReveal">
+      <section id="projects" data-aos="zoom-in" data-aos-offset="200"
+       data-aos-easing="ease" data-aos-duration="800">
         <v-layout
           column
           wrap
@@ -216,6 +217,10 @@
   </v-app>
  </div>
 
+ <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+ <script>
+  AOS.init();
+</script>
  <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
  <script src="https://unpkg.com/vue/dist/vue.js"></script>
  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
@@ -223,9 +228,7 @@
  
 
   <script src="main.js"></script>
-  <script src="https://anijs.github.io/lib/anijs/anijs-min.js"></script> 
-  <script src="https://anijs.github.io/lib/anijs/helpers/scrollreveal/anijs-helper-scrollreveal.js"></script>
-  <script src="https://anijs.github.io/lib/anijs/helpers/dom/anijs-helper-dom-min.js"></script>
+  
   
 
 </body>
