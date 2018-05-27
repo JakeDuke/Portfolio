@@ -39,7 +39,11 @@
             class="white--text"
           >
  
-            <div class="aos-item" data-aos="fade-down" data-aos-duration="800">
+            <div class="aos-item"
+            data-aos="fade-down"
+            data-aos-duration="1500"
+            data-aos-easing="ease-in-out"
+            >
             <h1 class="white--text mb-2 display-3 text-xs-center"
             
             >Welcome To My Portfolio!</h1>
@@ -58,8 +62,13 @@
         </v-parallax>
       </section>
 
-      <section id="projects" data-aos="zoom-in" data-aos-offset="200"
-       data-aos-easing="ease" data-aos-duration="800">
+      <section id="projects" 
+        data-aos="zoom-in-up" 
+        data-aos-easing="ease-in-out-quad" 
+        data-aos-once="true"
+        data-aos-offset="60"
+        data-aos-duration="1200"
+        >
         <v-layout
           column
           wrap
@@ -132,7 +141,11 @@
           <v-layout row wrap justify-center class="my-5">
             <v-flex xs12 sm4>
               <v-card class="elevation-0 transparent"
-              data-anijs="if: scroll, on: window, do: slideInLeft animated, before: $scrollReveal"
+              data-aos="zoom-out-right"
+              data-aos-easing="ease-in-out-quad"
+              data-aos-once="true"
+              data-aos-duration="1600"
+              
               >
                 <v-card-title primary-title class="layout justify-center">
                   <div class="headline">About</div>
@@ -146,7 +159,10 @@
             </v-flex>
             <v-flex xs12 sm4 offset-sm1>
               <v-card class="elevation-0 transparent"
-              data-anijs="if: scroll, on: window, do: slideInRight  animated, before: $scrollReveal"
+              data-aos="zoom-out-left"
+              data-aos-easing="ease-in-out-quad"
+              data-aos-once="true"
+              data-aos-duration="1600"
               >
                 <v-card-title primary-title class="layout justify-center">
                   <div class="headline">Contact Me</div>
@@ -221,6 +237,7 @@
  <script>
   AOS.init();
 </script>
+
  <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
  <script src="https://unpkg.com/vue/dist/vue.js"></script>
  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
