@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vuetify Parallax Starter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://anijs.github.io/lib/anicollection/anicollection.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+ <div id="app">
+   <v-app dark>
+     <section>
+      <v-toolbar class="elevation-22" color="light">
+        <v-toolbar-side-icon size="35px"><i class="fas fa-suitcase"></i></v-toolbar-side-icon>
+        <v-toolbar-title>Jake's Portfolio</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-toolbar-items class="hidden-sm-and-down">
+          <v-btn flat 
+          @click="$vuetify.goTo('#projects',{duration: 1000})"
+          >Projects</v-btn>
+          
+          <v-btn flat
+          @click="$vuetify.goTo('#about',{duration: 2000})"
+          >Contacts</v-btn>
+        </v-toolbar-items>
+      </v-toolbar>
+    </section>
+     
+    <v-content>
+      <section>
+        <v-parallax src="assets/sky1.jpg" height="600">
+          <v-layout
+            column
+            align-center
+            justify-center
+            class="white--text"
+          >
+ 
+
+            <h1 class="white--text mb-2 display-3 text-xs-center"
+            data-anijs="if: scroll, on: window, do: fadeInDown animated, before: $scrollReveal"
+            >Welcome To My Portfolio!</h1>
+            
+            <v-btn
+              class="black--text lighten-2 mt-5"
+              dark
+              large
+              color="white"
+              href="https://github.com/JakeDuke" target="_blank"
+              
+            >
+              My Github
+            </v-btn>
+          </v-layout>
+        </v-parallax>
+      </section>
+
+      <section id="projects" data-anijs="if: scroll, on: window, do: zoomIn  animated, before: $scrollReveal">
+        <v-layout
+          column
+          wrap
+          class="my-5"
+          align-center
+        >
+          <v-flex xs12 sm4 class="my-3">
+            <div class="text-xs-center">
+              <h1 class="display-2 mb-3">Some of my projects</h1>
+    
+            </div>
+          </v-flex>
+          
+
+            <v-container grid-list-xl>
+              <v-layout row wrap align-content  >
+
+                     <!-- CARD SECTION -->
+
+                
+                    <v-flex xs12 md4 px-5 v-for="lol in info">
+                        <v-card flat hover class="transparent" width="300px">
+                          <v-card-media :src="lol.pic" height="180px">
+                          </v-card-media>
+                            <v-card-title primary-title class="layout justify-center">
+                              <div class="text-md-center">  
+                                <h3 class="headline mb-3"> {{lol.name}} </h3>
+                                <div>{{lol.description}}</div>
+                              </div>
+                          </v-card-title>
+                            <v-card-actions style="justify-content: center">
+                              <v-btn flat color="purple lighten-3"
+                              :href="lol.demo" target="_blank"
+                              >DEMO</v-btn>
+                              <v-btn flat color="purple lighten-3"
+                              :href="lol.code" target="_blank"
+                              >CODE</v-btn>
+                          </v-card-actions>
+                        </v-card>
+                  </v-flex>
+            
+
+                  <!-- CARD SECTION -->
+
+              </v-layout>
+            </v-container>
+          
+        </v-layout>
+      </section>
+
+      <section>
+        <v-parallax src="assets/sky5.jpg" height="380">
+          <v-layout column align-center justify-center>
+            <div class="headline white--text mb-3 text-xs-center"></div>
+            
+            <v-btn
+              class="white black--text mt-5"
+              dark
+              large
+              href="https://github.com/JakeDuke" target="_blank"
+            >
+              MY GITHUB
+            </v-btn>
+          </v-layout>
+        </v-parallax>
+      </section>
+
+      <section id="about">
+        <v-container grid-list-xl>
+          <v-layout row wrap justify-center class="my-5">
+            <v-flex xs12 sm4>
+              <v-card class="elevation-0 transparent"
+              data-anijs="if: scroll, on: window, do: slideInLeft animated, before: $scrollReveal"
+              >
+                <v-card-title primary-title class="layout justify-center">
+                  <div class="headline">About</div>
+                </v-card-title>
+                <v-card-text class="subheading">
+                  Hi, my name is Jake, I am Europe based developer who likes creating pretty UI. 
+                  I'm Elewa Academy alumni (Full Stack Node.js program). My skills: HTML,
+                  CSS, Bootstrap, JavaScript, Vue, Vuetify and other cool stuff
+                </v-card-text>
+              </v-card>
+            </v-flex>
+            <v-flex xs12 sm4 offset-sm1>
+              <v-card class="elevation-0 transparent"
+              data-anijs="if: scroll, on: window, do: slideInRight  animated, before: $scrollReveal"
+              >
+                <v-card-title primary-title class="layout justify-center">
+                  <div class="headline">Contact Me</div>
+                </v-card-title>
+
+                <v-list class="transparent" >
+                  <v-list-tile>
+                    <v-list-tile-action>
+                      <v-icon class="purple--text text--lighten-2">phone</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                      <v-list-tile-title>+420 775064764</v-list-tile-title>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                  <v-list-tile>
+                    <v-list-tile-action>
+                      <v-icon class="purple--text text--lighten-2">place</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                      <v-list-tile-title>Wherever Is Needed</v-list-tile-title>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                  <v-list-tile>
+                    <v-list-tile-action>
+                      <v-icon class="purple--text  text--lighten-2">email</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                      <v-list-tile-title>jakedukin@gmail.com</v-list-tile-title>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                </v-list>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </section>
+
+      <v-footer height="auto">
+        <v-card
+          flat
+          tile
+          class="purple darken-1 white--text text-xs-center"
+          width="100%"
+        >  
+        <v-card-text class="white--text pt-4 ">
+            <div class="headline">Some social life <i class="far fa-comments"></i></div>
+          </v-card-text>
+          <v-card-text>
+
+            <section style="display: inline-block" v-for="key in combos" >
+              <v-btn
+              icon
+              class="mx-4 white--text"
+              :href="key.href" target='_blank'
+               >
+                <v-icon size="35px">{{key.link}}</v-icon>
+              </v-btn>
+            </section>
+          </v-card-text>
+            
+          <v-card-text class="white--text">
+            Created by JD with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i>
+          </v-card-text>
+        </v-card>
+      </v-footer>
+      
+    </v-content>
+  </v-app>
+ </div>
+
+ <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+ <script src="https://unpkg.com/vue/dist/vue.js"></script>
+ <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+
+ 
+
+  <script src="main.js"></script>
+  <script src="https://anijs.github.io/lib/anijs/anijs-min.js"></script> 
+  <script src="https://anijs.github.io/lib/anijs/helpers/scrollreveal/anijs-helper-scrollreveal.js"></script>
+  <script src="https://anijs.github.io/lib/anijs/helpers/dom/anijs-helper-dom-min.js"></script>
+  
+
+</body>
+</html>
