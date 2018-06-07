@@ -10,8 +10,8 @@ var vue = new Vue({
       info:[
         {
           name: "Final Project Demo", 
-          code:"https://github.com/JakeDuke/Final-Project-Demo",
-          demo:"https://github.com/JakeDuke/Final-Project-Demo",
+          code:"https://github.com/JakeDuke/Djfinder-all-in-one",
+          demo:"https://github.com/JakeDuke/Djfinder-all-in-one",
           description:"Elewa Final Project (in development)",
           pic:"./assets/dj.jpg"
         },
